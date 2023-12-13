@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whimsical Wonder Weaver</title>
+    <!-- Bootstrap CSS for consistent styling across browsers -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- RiTaJS Library for Story Generation -->
+    <script src="https://cdn.jsdelivr.net/npm/rita@3.0.21/dist/rita.min.js"></script>
+</head>
+<body>
+    <div class="container text-center mt-3">
+        <h1>Whimsical Wonder Weaver</h1>
+
+        <!-- Pixel Heart with Tooltip for CFG Explanation -->
+        <div class="pixel-heart tooltip mt-3">
+            <span class="tooltiptext">CFGs are like magic recipes for making sentences. Just like choosing ingredients to bake a cake, CFGs mix words to create stories!</span>
+        </div>
+
+        <div class="input-group mt-3 mb-3">
+            <input type="text" id="name-input" class="form-control" placeholder="Enter a name...">
+            <div class="input-group-append">
+                <button id="add-name" class="btn btn-custom">Add Name</button>
+            </div>
+        </div>
+        <button id="generate-story" class="btn btn-custom mb-3">Generate Story</button>
+        <div id="story-container" class="story-container"></div>
+    </div>
+
+    <!-- External JavaScript Files -->
+    <script src="hearticon.js"></script>
+    <script src="grammar.js"></script>
+</body>
+</html>
