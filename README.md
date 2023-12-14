@@ -6,8 +6,6 @@ Welcome to "Whimsical Wonder Weaver," a delightful web-based storytelling platfo
 ## About The Project
 
 "Whimsical Wonder Weaver" is designed to demonstrate the practical application of CFGs in creating a simple yet powerful language structure. The platform features:
-- **Branches (Choices) & Loops:** Showcasing the power of CFG in handling decision-making processes and repetitive narrative structures.
-- **Conditional Statements:** Illustrating 'if-else' logic in story progression.
 - **Basic Expressions:** Utilizing simple constructs to develop engaging storylines.
 - **Interactive Learning:** Aimed at providing hands-on experience in CFG design and reinforcing the understanding of language structures and grammar.
 
@@ -19,9 +17,7 @@ To dive into this magical world of stories:
 
 ## Features
 
-- **Create Your Adventure:** Use interactive text boxes to input names and make choices that influence the story.
-- **Learn About Grammars:** Discover fun facts about programming grammars by hovering over heart icons.
-- **Visual Output:** Enjoy colorful, pixel-art graphics that make the experience visually delightful.
+- **Create Your Adventure:** Use interactive text boxes to input names and places to make choices that influence the story.
 
 ## Built With
 
