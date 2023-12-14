@@ -1,43 +1,70 @@
-// grammar.js: Script for generating stories based on user input and predefined grammar
+// grammar.js: Script for generating complex and detailed stories
 document.addEventListener('DOMContentLoaded', function() {
-    var names = ["someone"]; // Default name, to be replaced by user input
+    var names = []; // Array to hold user-added names
+    var places = ["the Enchanted Forest of whispers from the past", "the Crystal Caves sparkling with mystery", "the Mystic Mountains shrouded in legend"];
+    var friends = ["a wise old owl with ancient knowledge", "a mystical unicorn with healing powers", "a fierce dragon guarding timeless treasures"];
+    var tasks = ["defeat the shadowy menace lurking beneath", "uncover the hidden secrets lost in time", "save their homeland from the brink of chaos"];
+    var challenges = ["overcoming a treacherous storm of unrelenting fury", "solving an ancient riddle wrapped in mystery", "escaping a maze of illusions with deceptive paths", "navigating through treacherous landscapes riddled with danger"];
+    var twists = ["finding an unexpected ally in a forgotten foe", "discovering a hidden power within themselves", "realizing a misunderstood truth that changes everything", "unearthing a long-lost artifact of unimaginable power"];
+    var resolutions = ["restoring peace and harmony to the land", "revealing the wisdom of the ancients that reshapes history", "forging a bond of unbreakable friendship that transcends time"];
+    var emotions = ["wit and wonder", "insight and determination", "hope and courage", "bravery and resilience"];
 
-    // Function to add a new name to the grammar
-    function addName() {
-        var name = document.getElementById('name-input').value.trim();
-        if (name) {
-            names[0] = name; // Replace the default or add a new name
-            document.getElementById('name-input').value = '';
-            alert("Name added: " + name);
+    function getRandomElement(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function updateAddedElements() {
+        document.getElementById('added-elements').textContent = 'Possible Names (randomly selected): ' + names.join(', ') + ' | Possible Places (randomly selected): ' + places.join(', ');
+        // Update for other elements similarly
+    }
+
+    function addElement() {
+        var elementValue = document.getElementById('element-input').value.trim();
+        var elementType = document.getElementById('element-type').value;
+        
+        if (elementValue) {
+            if (elementType === 'name') {
+                names.push(elementValue);
+            } else if (elementType === 'place') {
+                places.push(elementValue);
+            }
+            // Handle other element types similarly
+
+            document.getElementById('element-input').value = '';
+            alert(`New ${elementType} added: ${elementValue}`);
+            updateAddedElements();
         }
     }
 
-    // Function to generate an epic tale based on the names and grammar
     function generateEpicTale() {
-        // Define the grammar rules as a JSON string
-        var grammarJSON = {
-            "start": ["<hero> <action> <conclusion>"],
-            "hero": ["A brave pony named <name>", "A courageous puppy named <name>"],
-            "name": names, // Use the names array
-            "action": ["embarked on a magical adventure to <place>", "joined forces with <friend> to <task>"],
-            "place": ["the Enchanted Forest", "the Crystal Caves", "the Mystic Mountains"],
-            "friend": ["a wise old owl", "a mystical unicorn", "a fierce dragon"],
-            "task": ["defeat the shadowy menace", "uncover the hidden secrets", "save their homeland"],
-            "conclusion": ["Along the way, they learned the value of <lesson>", "Their courage and honesty led them to <achievement>"],
-            "lesson": ["friendship", "bravery", "honesty", "compassion"],
-            "achievement": ["victory over darkness", "unearthing ancient wisdom", "forming unbreakable bonds"]
-        };
+        var name = getRandomElement(names.length > 0 ? names : ["a nameless hero"]);
+        var place = getRandomElement(places);
+        var friend = getRandomElement(friends);
+        var task = getRandomElement(tasks);
+        var challenge = getRandomElement(challenges);
+        var twist = getRandomElement(twists);
+        var resolution = getRandomElement(resolutions);
+        var emotion = getRandomElement(emotions);
 
-        var grammar = RiTa.grammar(grammarJSON);
-        var result = grammar.expand();
-        return result;
+        var paragraph1 = `In a land far away, ${name}, known for their ${emotion}, 
+                            embarked on a magical adventure to ${place}. Joined by ${friend}, 
+                            they set out to ${task}. Their journey was fraught with challenges, including ${challenge}.`;
+        var paragraph2 = `As the tale unfolded, ${twist} altered their path. Amidst trials and tribulations,
+                             ${name} found strength in unexpected places. Finally, their journey culminated 
+                             in ${resolution}, leaving a legacy that echoed through the ages.`;
+
+        return paragraph1 + "\n\n" + paragraph2;
     }
-    // Event listeners for adding a name and generating a story
-    document.getElementById('add-name').addEventListener('click', addName);
+
+    // Event listeners
+    document.getElementById('add-element').addEventListener('click', addElement);
     document.getElementById('generate-story').addEventListener('click', function() {
-        var storyContainer = document.getElementById('story-container');
         var story = generateEpicTale();
-        storyContainer.innerHTML += story + '<br><br>';
+        var storyContainer = document.getElementById('story-container');
+        storyContainer.innerHTML = ''; 
+        var storyParagraph = document.createElement("p");
+        storyParagraph.innerHTML = story.replace(/\n\n/g, '<br><br>');
+        storyContainer.appendChild(storyParagraph);
         storyContainer.scrollTop = storyContainer.scrollHeight;
     });
 });

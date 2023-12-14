@@ -1,84 +1,96 @@
 body {
-    background-color: #f9c6ff; /* Light pink background */
-    color: #333; /* Darker text for better contrast */
-    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background-color: #f9c6ff;
+    color: #333;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center; /* Center align everything */
 }
 
-/* Custom Button Styles */
+/* Title Animation and Centering */
+.title-animation {
+    font-family: 'Pacifico', cursive;
+    animation: colorChange 1s infinite alternate;
+    font-size: 50px; /* Larger font size for the title */
+    margin: 20px 0; /* Top and bottom margin */
+}
+
+@keyframes colorChange {
+    0% { color: #6a0dad; }
+    100% { color: #58d8cb; }
+}
+
 .btn-custom {
-    background-color: #ffccff; /* Light pink background for buttons */
-    color: #333; /* Darker text for better contrast */
+    background-color: #ffccff;
+    color: #333;
     border: 2px solid #6a0dad;
-    padding: 10px 20px;
+    padding: 6px 20px;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+
 }
 
 .btn-custom:hover {
-    background-color: #6a0dad; /* Darker purple background on hover */
-    color: #ffccff; /* Light pink text on hover */
+    background-color: #6a0dad;
+    color: #ffccff;
+    transform: scale(1.1); /* Scaling effect on hover */
 }
 
-/* Custom Scrolling Story Box */
-#story-container {
-    padding: 20px;
+.story-container {
+    padding: 10px;
     border: 2px dashed #6a0dad;
     background-color: #fff;
-    height: 300px;
-    overflow-y: auto; /* Enables scrolling */
-    margin: 20px 0;
+    height: 200px; /* Adjusted height */
+    overflow-y: auto;
+    margin: 20px auto; /* Centering */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Matching width */
 }
 
-/* Pixel Heart and Tooltip Styles */
-.pixel-heart {
-    display: inline-block;
+/* Heart Icon with Animation */
+.heart-icon {
+    font-size: 50px;
+    margin: 0 5px;
+    animation: pulse 1s infinite alternate;
 }
 
-.row {
-    display: flex;
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
 }
 
-.pixel {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin: 1px;
-}
-
-.pixel.off {
-    background-color: transparent;
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 200px;
-    background-color: black;
-    color: #fff;
+/* Explanation Box Styling */
+.explanation-box {
+    padding: 20px;
+    border: 3px solid #6a0dad;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    max-width: 800px;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
-    opacity: 0;
-    transition: opacity 0.3s;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+/* Footer Text Styling */
+.footer-text {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffccff;
+    color: #333;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 800px; 
+}
+
+@media (max-width: 768px) {
+    .title-animation {
+        font-size: 28px;
+    }
+
+    .explanation-box, .story-container, .footer-text {
+        max-width: 100%;
+    }
 }
 
