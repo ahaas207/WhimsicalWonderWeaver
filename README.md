@@ -3,11 +3,6 @@
 
 Welcome to "Whimsical Wonder Weaver," a delightful web-based storytelling platform where the magic of context-free grammars (CFGs) comes to life! This project is an interactive playground that allows users, especially children, to explore the wonders of language structures and grammar through the lens of enchanting stories.
 
-## About The Project
-
-"Whimsical Wonder Weaver" is designed to demonstrate the practical application of CFGs in creating a simple yet powerful language structure. The platform features:
-- **Basic Expressions:** Utilizing simple constructs to develop engaging storylines.
-- **Interactive Learning:** Aimed at providing hands-on experience in CFG design and reinforcing the understanding of language structures and grammar.
 
 ## Getting Started
 
