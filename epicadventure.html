@@ -3,34 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Whimsical Wonder Weaver</title>
-    <!-- Bootstrap CSS for consistent styling across browsers -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- RiTaJS Library for Story Generation -->
     <script src="https://cdn.jsdelivr.net/npm/rita@3.0.21/dist/rita.min.js"></script>
 </head>
 <body>
     <div class="container text-center mt-3">
-        <h1>Whimsical Wonder Weaver</h1>
+        <div class="heart-row top-heart-row">
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+        </div>
 
-        <!-- Pixel Heart with Tooltip for CFG Explanation -->
-        <div class="pixel-heart tooltip mt-3">
-            <span class="tooltiptext">CFGs are like magic recipes for making sentences. Just like choosing ingredients to bake a cake, CFGs mix words to create stories!</span>
+        <h1 class="title-animation">Whimsical Wonder Weaver</h1>
+        
+        <div class="heart-row bottom-heart-row">
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #6a0dad;"></i>
+            <i class="fas fa-heart heart-icon" style="color: #58d8cb;"></i>
         </div>
 
         <div class="input-group mt-3 mb-3">
-            <input type="text" id="name-input" class="form-control" placeholder="Enter a name...">
+            <input type="text" id="element-input" class="form-control" placeholder="As many names or places as you'd like, one at a time...">
+            <select id="element-type" class="form-control">
+                <option value="name">Name</option>
+                <option value="place">Place</option>
+                <!-- Future options here -->
+            </select>
             <div class="input-group-append">
-                <button id="add-name" class="btn btn-custom">Add Name</button>
+                <button id="add-element" class="btn btn-custom">Add to the story choices</button>
             </div>
         </div>
-        <button id="generate-story" class="btn btn-custom mb-3">Generate Story</button>
+
+        <p id="added-elements" class="added-elements"></p>
+
+        <button id="generate-story" class="btn btn-custom mb-3 story-button-animation">Generate Story</button>
         <div id="story-container" class="story-container"></div>
+
+        <div class="explanation-box">
+            <p class="explanation-text">
+                Think of a Context-Free Grammar (CFG) as a recipe book for making sentences in computer languages. 
+                It's like having a box of puzzle pieces where each piece is a rule in our story generator. 
+                One rule might be 'start with a name', and another could say 'add a place next'. 
+                We use these rules to build fun stories, and each rule works independently, just like puzzle pieces. 
+                That's why it's 'context-free' – the rules don’t rely on what's before or after them, 
+                they just guide us to put our story together in the right order!
+            </p>
+        </div>
+        <footer class="footer-text">
+            To Sadie. We made it, my degree program is complete and it's a journey we've shared. Thank you for being my inspiration. I can't wait to have more time to be present with you. Love, Mom
+        </footer>
     </div>
 
-    <!-- External JavaScript Files -->
-    <script src="hearticon.js"></script>
     <script src="grammar.js"></script>
 </body>
 </html>
